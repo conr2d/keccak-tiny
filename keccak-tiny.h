@@ -1,6 +1,8 @@
 #ifndef KECCAK_FIPS202_H
 #define KECCAK_FIPS202_H
-#define __STDC_WANT_LIB_EXT1__ 1
+#ifndef __STDC_WANT_LIB_EXT1__
+# define memset_s(W,WL,V,OL) memset(W,V,OL)
+#endif
 #include <stdint.h>
 #include <stdlib.h>
 
