@@ -6,14 +6,17 @@ in 120 cloc (156 lines). One C file, one header.
 The `Keccak-f[1600]` permutation is fully unrolled; it's nearly as fast
 as the Keccak team's optimized permutation.
 
+Additionally, the libkeccak-tiny provided by this repository contains
+`keccak256()` used in Ethereum.
+
 ## Building
 
-    > clang -O3 -march=native -std=c11 -Wextra -dynamic -shared keccak-tiny.c -o libkeccak-tiny.dylib
-
-If you don't have a modern libc that includes the `memset_s` function,
-you can just add `-D"memset_s(W,WL,V,OL)=memset(W,V,OL)` to the command
-line.
-
+```sh
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
 ## Using
 
 Build the library, include the header, and do, e.g.,
