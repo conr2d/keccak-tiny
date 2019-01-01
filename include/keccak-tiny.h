@@ -15,6 +15,10 @@
 #define deckeccak(bits) \
   int keccak_##bits(uint8_t*, size_t, const uint8_t*, size_t);
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 decshake(128)
 decshake(256)
 decsha3(224)
@@ -22,4 +26,9 @@ decsha3(256)
 decsha3(384)
 decsha3(512)
 deckeccak(256)
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif
