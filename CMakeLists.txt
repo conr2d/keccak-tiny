@@ -10,9 +10,9 @@ add_library(keccak-tiny SHARED
    src/keccak-tiny-unrolled.c
 )
 
-set_target_properties(keccak-tiny PROPERTIES PUBLIC_HEADER include/keccak-tiny.h)
+set_target_properties(keccak-tiny PROPERTIES PUBLIC_HEADER include/keccak-tiny/keccak-tiny.h)
 
-target_include_directories(keccak-tiny PRIVATE .)
+target_include_directories(keccak-tiny PUBLIC include)
 
 install(TARGETS keccak-tiny
    LIBRARY DESTINATION lib ${CMAKE_INSTALL_LIBDIR}

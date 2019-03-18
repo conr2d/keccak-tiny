@@ -13,7 +13,7 @@
   int sha3_##bits(uint8_t*, size_t, const uint8_t*, size_t);
 
 #define deckeccak(bits) \
-  int keccak_##bits(uint8_t*, size_t, const uint8_t*, size_t);
+  int keccak##bits(uint8_t*, size_t, const uint8_t*, size_t);
 
 #ifdef __cplusplus
 extern "C" {
