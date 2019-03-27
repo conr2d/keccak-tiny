@@ -152,7 +152,7 @@ static inline int hash(uint8_t* out, size_t outlen,
     return hash(out, outlen, in, inlen, 200 - (bits / 4), 0x06);  \
   }
 #define defkeccak(bits)                                           \
-  int keccak_##bits(uint8_t* out, size_t outlen,                  \
+  int keccak##bits(uint8_t* out, size_t outlen,                  \
                   const uint8_t* in, size_t inlen) {              \
     if (outlen > (bits/8)) {                                      \
       return -1;                                                  \
