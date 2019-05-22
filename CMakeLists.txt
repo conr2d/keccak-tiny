@@ -7,12 +7,12 @@ if (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
 endif()
 
 add_library(keccak-tiny SHARED
-   src/keccak-tiny-unrolled.c
+   keccak-tiny-unrolled.c
 )
 
-set_target_properties(keccak-tiny PROPERTIES PUBLIC_HEADER include/keccak-tiny/keccak-tiny.h)
+set_target_properties(keccak-tiny PROPERTIES PUBLIC_HEADER keccak-tiny.h)
 
-target_include_directories(keccak-tiny PUBLIC include)
+target_include_directories(keccak-tiny PUBLIC ${CMAKE_SOURCE_DIR})
 
 install(TARGETS keccak-tiny
    LIBRARY DESTINATION lib ${CMAKE_INSTALL_LIBDIR}
